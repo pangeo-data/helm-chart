@@ -15,7 +15,7 @@ You also need to add the dependent chart repos.
 
 ```shell
 # Add repos
-helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
+helm repo add pangeo https://pangeo.github.io/helm-chart/
 
 # Update repos
 helm repo update
@@ -28,7 +28,7 @@ You then need to create a `values.yaml` file with your own config options in. As
 helm dependency update pangeo
 
 # Install Pangeo
-helm install pangeo --name=<release name> --namespace=<namespace> -f /path/to/custom/values.yaml
+helm install pangeo/pangeo --name=<release name> --namespace=<namespace> -f /path/to/custom/values.yaml
 
 # Apply changes to Pangeo
 helm upgrade <release name> pangeo -f /path/to/custom/values.yaml
