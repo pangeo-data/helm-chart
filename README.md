@@ -24,14 +24,11 @@ helm repo update
 You then need to create a `values.yaml` file with your own config options in. As this chart is a collection of dependant charts you will need to refer to their configuration documentation for details. See the [values.yaml](pangeo/values.yaml) file for more information.
 
 ```shell
-# Get chart dependencies
-helm dependency update pangeo
-
 # Install Pangeo
-helm install pangeo/pangeo --name=<release name> --namespace=<namespace> -f /path/to/custom/values.yaml
+helm install pangeo/pangeo --version=<version> --name=<release name> --namespace=<namespace> -f /path/to/custom/values.yaml
 
 # Apply changes to Pangeo
-helm upgrade <release name> pangeo -f /path/to/custom/values.yaml
+helm upgrade <release name> pangeo/pangeo -f /path/to/custom/values.yaml
 
 # Delete Pangeo
 helm delete <release name> --purge
