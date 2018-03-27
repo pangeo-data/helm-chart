@@ -13,7 +13,17 @@ rbac:
 # To configure dependencies you must create a key with the name of the dependency
 # and then configure as per the dependent chart's values.yaml. Don't forget to indent!
 
-jupyterhub: {}
+jupyterhub:
   # Helm config for jupyterhub goes here
   # See https://github.com/jupyterhub/zero-to-jupyterhub-k8s/blob/master/jupyterhub/values.yaml
 
+  singleuser:
+    image:
+      name: pangeo/notebook
+      tag: 2018-03-12
+    cpu:
+      limit: 2
+      guarantee: 1
+    memory:
+      limit: 4G
+      guarantee: 2G
