@@ -15,7 +15,7 @@ You also need to add the dependent chart repos.
 
 ```shell
 # Add repos
-helm repo add pangeo https://pangeo.github.io/helm-chart/
+helm repo add pangeo https://pangeo-data.github.io/helm-chart/
 
 # Update repos
 helm repo update
