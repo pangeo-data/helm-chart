@@ -1,3 +1,15 @@
 apiVersion: v1
 entries:
-generated: 
+  pangeo:
+  - apiVersion: v1
+    created: 2018-03-27T11:45:11.632782+01:00
+    description: An extention of jupyterhub with extra Pangeo resources
+    digest: de9920c567cc8849e81812ef0e4d3912865300557e395d5bf40997327687689a
+    maintainers:
+    - email: jacob.tomlinson@informaticslab.co.uk
+      name: Jacob Tomlinson (Met Office)
+    name: pangeo
+    urls:
+    - https://pangeo-data.github.io/helm-chart/pangeo-0.1.0-ef74d6d.tgz
+    version: 0.1.0-ef74d6d
+generated: 2018-03-27T11:45:11.631705+01:00
