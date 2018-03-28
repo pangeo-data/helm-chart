@@ -3,7 +3,7 @@ python:
 - '3.6'
 
 install:
-- pip install git+https://github.com/jacobtomlinson/chartpress.git@optional-images
+- pip install git+https://github.com/jupyterhub/chartpress.git
 script:
 - chartpress --commit-range ${TRAVIS_COMMIT_RANGE}
 
