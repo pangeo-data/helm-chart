@@ -11,7 +11,7 @@ Chart dependencies:
 
 First off you need [helm](https://github.com/kubernetes/helm) if you don't have it already.
 
-You also need to add the dependent chart repos.
+You also need to add the pangeo chart repository.
 
 ```shell
 # Add repos
