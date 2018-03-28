@@ -1,0 +1,18 @@
+language: python
+python:
+- '3.6'
+
+install:
+- pip install git+https://github.com/jupyterhub/chartpress.git
+script:
+- chartpress --commit-range ${TRAVIS_COMMIT_RANGE}
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - openssl aes-256-cbc -K $encrypted_058f1ad78f7f_key -iv $encrypted_058f1ad78f7f_iv -in deploy-key.rsa.enc -out deploy-key.rsa -d
+  - chmod 0400 deploy-key.rsa
+  - GIT_SSH_COMMAND="ssh -i ${PWD}/deploy-key.rsa" chartpress --commit-range ${TRAVIS_COMMIT_RANGE} --publish-chart
+  on:
+    tags: true

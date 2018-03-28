@@ -1,0 +1,8 @@
+# requirements.yaml
+dependencies:
+- name: jupyterhub
+  version: "v0.7-9c93c00"
+  repository: 'https://jupyterhub.github.io/helm-chart/'
+  import-values:
+    - child: rbac
+      parent: rbac
