@@ -27,3 +27,5 @@ jupyterhub:
     memory:
       limit: 4G
       guarantee: 2G
+    defaultUrl: "/lab"
+    serviceAccountName: daskkubernetes
