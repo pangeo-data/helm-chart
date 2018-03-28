@@ -1,4 +1,5 @@
 # Pangeo Helm Chart
+[![Build Status](https://travis-ci.org/pangeo-data/helm-chart.svg?branch=master)](https://travis-ci.org/pangeo-data/helm-chart)
 
 This is the helm chart for installing Pangeo.
 
