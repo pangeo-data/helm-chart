@@ -20,7 +20,7 @@ jupyterhub:
   singleuser:
     image:
       name: pangeo/notebook
-      tag: 2018-03-12
+      tag: 2018-03-22
     cpu:
       limit: 2
       guarantee: 1
