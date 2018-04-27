@@ -15,4 +15,5 @@ deploy:
   - chmod 0400 deploy-key.rsa
   - GIT_SSH_COMMAND="ssh -i ${PWD}/deploy-key.rsa" chartpress --commit-range ${TRAVIS_COMMIT_RANGE} --publish-chart
   on:
-    tags: true
+    branch:
+    - master
