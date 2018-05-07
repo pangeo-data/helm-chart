@@ -6,7 +6,7 @@ python:
 
 install:
 - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-- pip install git+https://github.com/jupyterhub/chartpress.git
+- pip install --default-timeout=100 git+https://github.com/jupyterhub/chartpress.git
 script:
 - chartpress --commit-range ${TRAVIS_COMMIT_RANGE}
 
