@@ -20,7 +20,7 @@ jupyterhub:
   singleuser:
     image:
       name: pangeo/notebook
-      tag: e2cc289d8f97a81ce75e38556344299f18623fb9
+      tag: e02bc75c40df01454dd01bd6ae55e0213ada7563
     cpu:
       limit: 2
       guarantee: 1
