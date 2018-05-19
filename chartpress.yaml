@@ -3,3 +3,8 @@ charts:
     repo:
       git: pangeo-data/helm-chart
       published: https://pangeo-data.github.io/helm-chart
+    images:
+      notebook:
+        contextPath: docker-images/notebook
+        # path in values.yaml to be updated with image name and tag
+        valuesPath: image
