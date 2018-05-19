@@ -7,4 +7,4 @@ charts:
     images:
       notebook:
         contextPath: docker-images/notebook
-        valuesPath: singleuser.image
+        valuesPath: jupyterhub.singleuser.image
