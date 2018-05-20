@@ -1,5 +1,10 @@
 charts:
   - name: pangeo
+    imagePrefix: pangeo/
     repo:
       git: pangeo-data/helm-chart
       published: https://pangeo-data.github.io/helm-chart
+    images:
+      notebook:
+        contextPath: docker-images/notebook
+        valuesPath: jupyterhub.singleuser.image
