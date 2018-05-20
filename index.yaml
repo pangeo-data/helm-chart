@@ -24,6 +24,17 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-a14d55b.tgz
     version: v0.1.1-a14d55b
   - apiVersion: v1
+    created: 2018-05-20T19:41:31.271505134Z
+    description: An extention of jupyterhub with extra Pangeo resources
+    digest: 69f5c215173f4b8327dc78a810d849609ff2b72201401c011d26f82b814d7d91
+    maintainers:
+    - email: jacob.tomlinson@informaticslab.co.uk
+      name: Jacob Tomlinson (Met Office)
+    name: pangeo
+    urls:
+    - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-95ab292.tgz
+    version: v0.1.1-95ab292
+  - apiVersion: v1
     created: 2018-05-19T11:35:49.788607771Z
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 896d17e19fa0a8003f62a111a83655673f679c2ef1f7c114c1a99f865eb3634c
@@ -199,4 +210,4 @@ entries:
     urls:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-052e5ec.tgz
     version: v0.1.0-052e5ec
-generated: 2018-05-19T11:35:49.786179487Z
+generated: 2018-05-20T19:41:31.270012543Z
