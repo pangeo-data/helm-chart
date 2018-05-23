@@ -21,11 +21,5 @@ jupyterhub:
     image:
       name: pangeo/notebook
       tag: e02bc75c40df01454dd01bd6ae55e0213ada7563
-    cpu:
-      limit: 2
-      guarantee: 1
-    memory:
-      limit: 4G
-      guarantee: 2G
     defaultUrl: "/lab"
     serviceAccountName: daskkubernetes
