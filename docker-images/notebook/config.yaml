@@ -1,0 +1,12 @@
+distributed:
+  dashboard:
+    link: "{JUPYTERHUB_SERVICE_PREFIX}proxy/{port}/status"
+
+  admin:
+    tick:
+      limit: 5s
+
+kubernetes:
+  worker-template-path: "/home/{NB_USER}/worker-template.yaml"
+  name: "dask-{JUPYTERHUB_USER}-{uuid}"
+

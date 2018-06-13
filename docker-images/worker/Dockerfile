@@ -4,14 +4,18 @@ FROM continuumio/miniconda3:4.3.14
 RUN wget -O /usr/local/bin/dumb-init https://github.com/Yelp/dumb-init/releases/download/v1.2.0/dumb-init_1.2.0_amd64
 RUN chmod +x /usr/local/bin/dumb-init
 
-RUN conda install --yes -c conda-forge \
+RUN conda install --yes \
+    -c defaults \
+    -c conda-forge \
     cython \
     cytoolz \
     dask=0.17.4 \
     distributed=1.21.8 \
+    esmpy \
     fastparquet \
     git \
     lz4 \
+    msgpack-python \
     netcdf4 \
     nomkl \
     numba \
@@ -31,12 +35,23 @@ RUN apt-get update \
 
 RUN pip install --upgrade pip
 
-RUN pip install pyasn1 click urllib3 fusepy s3fs \
-                gcsfs==0.1.0 zarr==2.2.0 xarray==0.10.4 \
-                --upgrade --no-cache-dir
+RUN pip install click \
+                urllib3 \
+                fusepy \
+                s3fs \
+                gcsfs==0.1.0 \
+                zarr==2.2.0 \
+                xarray==0.10.7 \
+                xesmf \
+                --upgrade --no-cache-dir --upgrade-strategy only-if-needed
+
+RUN pip install git+https://github.com/dask/dask@0a7fe8de2eef643f797afe5fda4c1b0bda8ad03d\
+                git+https://github.com/dask/distributed@7909f27d591612537bb23974d089869edb11d097\
+                msgpack \
+                --upgrade --no-cache-dir --no-deps
 
 ENV OMP_NUM_THREADS=1
-ENV DASK_TICK_MAXIMUM_DELAY=5s
+ENV DASK_DISTRIBUTED__ADMIN__TICK__LIMIT=5s
 
 USER root
 COPY prepare.sh /usr/bin/prepare.sh
