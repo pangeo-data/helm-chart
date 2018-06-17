@@ -7,9 +7,11 @@ RUN chmod +x /usr/local/bin/dumb-init
 RUN conda install --yes \
     -c defaults \
     -c conda-forge \
+    bokeh=0.12.16 \
+    cloudpickle=0.5.3 \
     cython \
     cytoolz \
-    dask=0.17.4 \
+    dask=0.17.5 \
     distributed=1.21.8 \
     esmpy \
     fastparquet \
@@ -20,10 +22,13 @@ RUN conda install --yes \
     nomkl \
     numba \
     numcodecs \
-    numpy=1.14.3 \
-    pandas \
+    numpy=1.14.5 \
+    pandas=0.23.1 \
     python-blosc \
+    s3fs \
     scikit-image \
+    toolz=0.9.0 \
+    tornado=5.0.2 \
     scipy \
     zict \
     && conda clean -tipsy
@@ -33,12 +38,11 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
+#RUN pip install --upgrade pip
 
 RUN pip install click \
                 urllib3 \
                 fusepy \
-                s3fs \
                 gcsfs==0.1.0 \
                 zarr==2.2.0 \
                 xarray==0.10.7 \
@@ -47,7 +51,6 @@ RUN pip install click \
 
 RUN pip install git+https://github.com/dask/dask@0a7fe8de2eef643f797afe5fda4c1b0bda8ad03d\
                 git+https://github.com/dask/distributed@7909f27d591612537bb23974d089869edb11d097\
-                msgpack \
                 --upgrade --no-cache-dir --no-deps
 
 ENV OMP_NUM_THREADS=1
