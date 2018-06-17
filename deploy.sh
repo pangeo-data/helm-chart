@@ -8,4 +8,4 @@ helm repo add jupyterhub https://jupyterhub.github.io/helm-chart/
 helm repo update
 
 helm dependency update pangeo
-GIT_SSH_COMMAND="ssh -i ${PWD}/deploy-key.rsa" chartpress --commit-range ${TRAVIS_COMMIT_RANGE} --publish-chart
+GIT_SSH_COMMAND="ssh -i ${PWD}/deploy-key.rsa" chartpress --commit-range ${TRAVIS_COMMIT_RANGE} --publish-chart --push
