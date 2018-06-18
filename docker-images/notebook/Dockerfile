@@ -1,5 +1,5 @@
 # jupyter/base-noteobok uploaded 2018-06-13
-FROM jupyter/base-notebook:4417b81d04b7  
+FROM jupyter/base-notebook:4417b81d04b7
 
 USER root
 RUN apt-get update \
@@ -17,10 +17,10 @@ RUN conda install --yes \
     bokeh=0.12.16 \
     cython \
     cytoolz \
-    dask=0.17.5 \
+    dask=0.18.0 \
     dask-ml \
     datashader \
-    distributed=1.21.8 \
+    distributed=1.22.0 \
     esmpy \
     fastparquet \
     ipywidgets \
@@ -38,15 +38,16 @@ RUN conda install --yes \
     nomkl \
     numba \
     numcodecs \
-    numpy=1.14.3 \
-    pandas \
+    numpy=1.14.5 \
+    pandas=0.23.1 \
     python-blosc \
     pyzmq \
     s3fs \
     scipy \
     scikit-image \
     scikit-learn \
-    tornado=5 \
+    tornado \
+    xarray=0.10.7 \
     zarr=2.2.0 \
     zict \
     intake-xarray \
@@ -58,20 +59,14 @@ RUN pip install fusepy \
                 click \
                 jedi \
                 kubernetes==6.0.0 \
+                dask-kubernetes==0.4.0 \
                 gcsfs==0.1.0 \
-                xarray==0.10.7 \
                 xesmf \
                 nbserverproxy==0.8.1 \
                 git+https://github.com/xgcm/xgcm \
                 --upgrade --no-cache-dir \
                 --upgrade-strategy only-if-needed
 
-RUN pip install git+https://github.com/dask/dask@0a7fe8de2eef643f797afe5fda4c1b0bda8ad03d\
-                git+https://github.com/dask/distributed@7909f27d591612537bb23974d089869edb11d097\
-                git+https://github.com/dask/dask-kubernetes@48c4106387d7ccab9a72d6f50df024cec2232a5e\
-                --no-cache-dir \
-                --upgrade \ 
-                --no-deps
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                                  # @jupyterlab/hub-extension \
