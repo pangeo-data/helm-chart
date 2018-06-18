@@ -46,7 +46,8 @@ RUN conda install --yes \
     scipy \
     scikit-image \
     scikit-learn \
-    tornado \
+    toolz=0.9.0 \
+    tornado=5.0.2 \
     xarray=0.10.7 \
     zarr=2.2.0 \
     zict \

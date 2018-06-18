@@ -27,8 +27,8 @@ RUN conda install --yes \
     python-blosc \
     s3fs \
     scikit-image \
-    toolz \
-    tornado \
+    toolz=0.9.0 \
+    tornado=5.0.2 \
     scipy \
     xarray==0.10.7 \
     zarr==2.2.0 \
@@ -40,7 +40,11 @@ RUN apt-get update \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 
-RUN pip install --upgrade pip
+# if we enable this line, we get an error later on
+# ```Cannot uninstall 'pyasn1'. It is a distutils installed project and thus we
+# cannot accurately determine which files belong to it which would lead to only
+# a partial uninstall.```
+#RUN pip install --upgrade pip
 
 RUN pip install click \
                 urllib3 \
