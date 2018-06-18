@@ -5,7 +5,7 @@ set -x
 echo "Copy files from pre-load directory into home"
 cp --update -r -v /pre-home/. /home/jovyan
 rm -rf /pre-home/git
-git clone https://github.com/martindurant/pangeo-example-notebooks /pre-home/git
+git clone https://github.com/pangeo-data/pangeo-example-notebooks /pre-home/git
 cd /pre-home/git
 DATESTAMP=`git log -1 --format=%cd --date=short`
 for file in  *.ipynb; do cp --update "$file" /home/jovyan/examples/"${file/.ipynb/_$DATESTAMP.ipynb}"; done
