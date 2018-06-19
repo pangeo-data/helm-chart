@@ -7,8 +7,11 @@ cp --update -r -v /pre-home/. /home/jovyan
 rm -rf /pre-home/git
 git clone https://github.com/pangeo-data/pangeo-example-notebooks /pre-home/git
 cd /pre-home/git
-DATESTAMP=`git log -1 --format=%cd --date=short`
-for file in  *.ipynb; do cp --update "$file" /home/jovyan/examples/"${file/.ipynb/_$DATESTAMP.ipynb}"; done
+for file in  *.ipynb;
+do
+    DATESTAMP=`git log -1 --format="%cd" --date=short -- $file`
+    cp --update "$file" /home/jovyan/examples/"${file/.ipynb/_$DATESTAMP.ipynb}";
+done
 touch /home/jovyan/examples/PROVIDED_EXAMPLE_NOTEBOOKS.md
 cd
 
