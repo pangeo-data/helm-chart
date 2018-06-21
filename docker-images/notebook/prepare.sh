@@ -4,16 +4,10 @@ set -x
 
 echo "Copy files from pre-load directory into home"
 cp --update -r -v /pre-home/. /home/jovyan
-rm -rf /pre-home/git
-git clone https://github.com/pangeo-data/pangeo-example-notebooks /pre-home/git
-cd /pre-home/git
-for file in  *.ipynb;
-do
-    DATESTAMP=`git log -1 --format="%cd" --date=short -- $file`
-    cp --update "$file" /home/jovyan/examples/"${file/.ipynb/_$DATESTAMP.ipynb}";
-done
-touch /home/jovyan/examples/PROVIDED_EXAMPLE_NOTEBOOKS.md
-cd
+rm -rf examples
+git clone https://github.com/pangeo-data/pangeo_examples examples
+echo "Files in this directory should be treated as read-only"  > examples/DONT_SAVE_ANYTHING_HERE.md
+mkdir work
 
 if [ -e "/opt/app/environment.yml" ]; then
     echo "environment.yml found. Installing packages"
