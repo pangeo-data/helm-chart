@@ -4,9 +4,18 @@ set -x
 
 echo "Copy files from pre-load directory into home"
 cp --update -r -v /pre-home/. /home/jovyan
-rm -rf examples
-git clone https://github.com/pangeo-data/pangeo_examples examples
-echo "Files in this directory should be treated as read-only"  > examples/DONT_SAVE_ANYTHING_HERE.md
+
+if [ -z "$EXAMPLES_GIT_URL" ]; then
+    export EXAMPLES_GIT_URL=https://github.com/pangeo-data/pangeo-example-notebooks
+fi
+git clone $EXAMPLES_GIT_URL examples
+cd examples
+git remote set-url origin $EXAMPLES_GIT_URL
+git fetch origin
+git reset --hard origin/master
+git merge --strategy-option=theirs origin/master
+echo "Files in this directory should be treated as read-only"  > DONT_SAVE_ANYTHING_HERE.md
+cd ..
 mkdir work
 
 if [ -e "/opt/app/environment.yml" ]; then
