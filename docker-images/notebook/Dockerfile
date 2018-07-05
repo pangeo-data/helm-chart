@@ -3,7 +3,7 @@ FROM jupyter/base-notebook:4417b81d04b7
 
 USER root
 RUN apt-get update \
-  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git \
+  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git graphviz \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 USER $NB_USER
@@ -52,6 +52,10 @@ RUN conda install --yes \
     zarr=2.2.0 \
     zict \
     intake-xarray \
+    graphviz \
+    python-graphviz \
+    gsw \
+    gcsfs \
     && conda clean -tipsy
 
 RUN pip install --upgrade pip
@@ -61,7 +65,6 @@ RUN pip install fusepy \
                 jedi \
                 kubernetes==6.0.0 \
                 dask-kubernetes==0.4.0 \
-                gcsfs==0.1.0 \
                 xesmf \
                 nbserverproxy==0.8.1 \
                 git+https://github.com/xgcm/xgcm \
