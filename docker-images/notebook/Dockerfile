@@ -73,7 +73,7 @@ RUN pip install fusepy \
 
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
-                                 # @jupyterlab/hub-extension \
+                                 @jupyterlab/hub-extension \
                                  @pyviz/jupyterlab_pyviz
 
 RUN jupyter serverextension enable --py nbserverproxy --sys-prefix
