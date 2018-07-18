@@ -34,7 +34,7 @@ RUN conda install --yes \
     matplotlib \
     msgpack-python \
     nb_conda_kernels \
-    netcdf4 \
+    netcdf4>1.4 \
     nomkl \
     numba \
     numcodecs \
