@@ -76,7 +76,7 @@ RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                                  @jupyterlab/hub-extension \
                                  @pyviz/jupyterlab_pyviz
 
-RUN jupyter serverextension enable --py nbserverproxy --sys-prefix
+RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 
 USER root
 COPY prepare.sh /usr/bin/prepare.sh
