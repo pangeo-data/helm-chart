@@ -8,7 +8,7 @@ cp --update -r -v /pre-home/. /home/jovyan
 if [ -z "$EXAMPLES_GIT_URL" ]; then
     export EXAMPLES_GIT_URL=https://github.com/pangeo-data/pangeo-example-notebooks
 fi
-rmdir examples  # deletes directory if empty, in favour of fresh clone
+rmdir examples > /dev/null # deletes directory if empty, in favour of fresh clone
 if [ ! -d "examples" ]; then
   git clone $EXAMPLES_GIT_URL examples
 fi
