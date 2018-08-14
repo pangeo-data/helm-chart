@@ -81,8 +81,7 @@ RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 USER root
 COPY prepare.sh /usr/bin/prepare.sh
 RUN chmod +x /usr/bin/prepare.sh
-RUN mkdir /home/$NB_USER/examples && chown -R $NB_USER /home/$NB_USER/examples
-RUN mkdir /pre-home && mkdir /pre-home/examples && chown -R $NB_USER /pre-home
+RUN mkdir /pre-home && chown -R $NB_USER /pre-home
 
 ENV DASK_CONFIG=/home/$NB_USER/config.yaml
 COPY config.yaml /pre-home
