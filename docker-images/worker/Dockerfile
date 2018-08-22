@@ -11,8 +11,8 @@ RUN conda install --yes \
     cloudpickle=0.5.3 \
     cython \
     cytoolz \
-    dask=0.18.0 \
-    distributed=1.22.0 \
+    dask=0.18.2 \
+    distributed=1.22.1 \
     esmpy \
     fastparquet \
     git \
@@ -22,15 +22,15 @@ RUN conda install --yes \
     nomkl \
     numba \
     numcodecs \
-    numpy=1.14.5 \
-    pandas=0.23.1 \
+    numpy=1.15.1 \
+    pandas=0.23.2 \
     python-blosc \
     s3fs \
     scikit-image \
     toolz=0.9.0 \
     tornado=5.0.2 \
     scipy \
-    xarray==0.10.7 \
+    xarray==0.10.8 \
     zarr==2.2.0 \
     zict \
     && conda clean -tipsy
