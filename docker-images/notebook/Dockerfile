@@ -77,7 +77,7 @@ RUN pip install fusepy \
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                                  @jupyterlab/hub-extension \
                                  @pyviz/jupyterlab_pyviz \
-                                 jupyter-leaflet \
+                                 jupyter-leaflet
 
 RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 
