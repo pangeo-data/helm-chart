@@ -21,7 +21,7 @@ RUN conda install --yes \
     dask=0.18.2 \
     dask-ml \
     datashader \
-    distributed=1.22.2 \
+    distributed=1.22.1 \
     esmpy \
     fastparquet \
     gcsfs=0.1.2 \
@@ -76,7 +76,8 @@ RUN pip install fusepy \
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                                  @jupyterlab/hub-extension \
-                                 @pyviz/jupyterlab_pyviz
+                                 @pyviz/jupyterlab_pyviz \
+                                 jupyter-leaflet \
 
 RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 
