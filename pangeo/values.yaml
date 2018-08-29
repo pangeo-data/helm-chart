@@ -28,6 +28,7 @@ jupyterhub:
       limit: 4G
       guarantee: 2G
     defaultUrl: "/lab"
+    cmd: jupyter-labhub
     serviceAccountName: daskkubernetes
 
   prePuller:
