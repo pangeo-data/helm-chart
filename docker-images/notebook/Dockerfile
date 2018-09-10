@@ -4,6 +4,7 @@ FROM jupyter/base-notebook:4417b81d04b7
 USER root
 RUN apt-get update \
   && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git graphviz \
+             man tree \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 USER $NB_USER
