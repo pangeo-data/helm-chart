@@ -91,7 +91,7 @@ echo "Done"
 # Mount optional FUSE filesystems #
 ###################################
 
-echo "Mouting FUSE filesystems..."
+echo "Mounting FUSE filesystems..."
 if [ "$GCSFUSE_BUCKET" ]; then
     echo "Mounting $GCSFUSE_BUCKET to /gcs"
     /opt/conda/bin/gcsfuse $GCSFUSE_BUCKET /gcs --background
