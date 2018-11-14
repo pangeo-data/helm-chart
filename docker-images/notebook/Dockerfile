@@ -17,6 +17,7 @@ RUN conda install --yes \
     -c conda-forge \
     bokeh=0.12.16 \
     bqplot \
+    cartopy \
     cython \
     cytoolz \
     dask=0.18.2 \
