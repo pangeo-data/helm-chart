@@ -10,11 +10,11 @@ RUN apt-get update \
 USER $NB_USER
 
 RUN conda install --yes \
+    -c conda-forge \
     -c defaults \
     -c pyviz/label/dev \
     -c bokeh/channel/dev \
     -c intake \
-    -c conda-forge \
     bokeh=0.12.16 \
     bqplot \
     cartopy \
@@ -47,6 +47,7 @@ RUN conda install --yes \
     pandas=0.23.2 \
     python-blosc \
     pyzmq \
+    rasterio \
     s3fs \
     scipy \
     scikit-image \
