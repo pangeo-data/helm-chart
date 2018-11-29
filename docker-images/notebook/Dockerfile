@@ -73,6 +73,7 @@ RUN pip install fusepy \
                 xesmf \
                 nbserverproxy==0.8.1 \
                 git+https://github.com/xgcm/xgcm \
+                git+https://github.com/Unidata/cftime.git \
                 --upgrade --no-cache-dir \
                 --upgrade-strategy only-if-needed
 
