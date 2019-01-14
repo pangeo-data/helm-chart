@@ -15,7 +15,7 @@ RUN conda update conda --yes \
 RUN conda install --yes  \
     appmode \
     arrow \
-    pyviz/label/earthsim::bokeh \
+    bokeh \
     bqplot \
     cartopy \
     click \
@@ -34,7 +34,7 @@ RUN conda install --yes  \
     gcsfs \
     graphviz \
     gsw \
-    pyviz/label/earthsim::holoviews \
+    holoviews \
     hvplot \
     intake::intake \
     intake::intake-xarray \
