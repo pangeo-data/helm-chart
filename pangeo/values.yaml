@@ -20,7 +20,7 @@ jupyterhub:
   singleuser:
     image:
       name: pangeo/notebook
-      tag: 2018-06-13.4
+      tag: v0.1.1-e5fa7c4
     defaultUrl: "/lab"
     cmd: jupyter-labhub
     serviceAccountName: daskkubernetes
