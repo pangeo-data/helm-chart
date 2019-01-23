@@ -21,16 +21,20 @@ jupyterhub:
     image:
       name: pangeo/notebook
       tag: 2018-06-13.4
-    cpu:
-      limit: 2
-      guarantee: 1
-    memory:
-      limit: 4G
-      guarantee: 2G
     defaultUrl: "/lab"
     cmd: jupyter-labhub
     serviceAccountName: daskkubernetes
-
   prePuller:
     hook:
       enabled: false
+
+# Resource specifications
+# -----------------------
+# (specific deployments of this chart should add this section to local helm config)
+#
+#    cpu:
+#      limit: 2
+#      guarantee: 1
+#    memory:
+#      limit: 4G
+#      guarantee: 2G
