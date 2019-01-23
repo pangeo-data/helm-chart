@@ -92,7 +92,6 @@ RUN mkdir /pre-home && chown -R $NB_USER /pre-home
 
 ENV DASK_CONFIG=/home/$NB_USER/config.yaml
 COPY config.yaml /pre-home
-COPY worker-template.yaml /pre-home
 
 RUN mkdir /gcs && chown -R $NB_USER /gcs
 RUN mkdir /opt/app
