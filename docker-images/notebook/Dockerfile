@@ -3,76 +3,81 @@ FROM jupyter/base-notebook:4417b81d04b7
 
 USER root
 RUN apt-get update \
-  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git graphviz \
+  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git \
              man tree build-essential \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 USER $NB_USER
 
-RUN conda install --yes \
-    -c conda-forge \
-    -c defaults \
-    -c pyviz/label/dev \
-    -c bokeh/channel/dev \
-    -c intake \
-    bokeh=0.12.16 \
+RUN conda update conda --yes \
+  && conda config --remove channels defaults
+
+RUN conda install --yes  \
+    appmode \
+    arrow \
+    bokeh \
     bqplot \
     cartopy \
-    cython \
+    click \
+    cython  \
     cytoolz \
-    dask=0.18.2 \
+    dask \
+    dask-kubernetes \
     dask-ml \
+    dask-tensorflow \
     datashader \
-    distributed=1.22.1 \
+    distributed \
     esmpy \
     fastparquet \
-    gcsfs=0.1.2 \
+    fusepy \
+    geoviews \
+    gcsfs \
+    graphviz \
+    gsw \
+    holoviews \
+    hvplot \
+    intake::intake \
+    intake::intake-xarray \
     ipywidgets \
     ipyleaflet \
+    jedi \
     jupyter \
     jupyterlab=0.34.2 \
-    jupyterlab_launcher=0.13.1 \
+    jupyterlab_launcher \
     jupyter_client \
-    holoviews \
+    kubernetes \
     libsodium \
     lz4 \
     matplotlib \
     msgpack-python \
     nb_conda_kernels \
-    netcdf4>1.4 \
+    nbserverproxy \
+    netcdf4 \
     nomkl \
     numba \
     numcodecs \
-    numpy=1.15.1 \
-    pandas=0.23.2 \
+    numpy \
+    pandas \
+    panel \
     python-blosc \
+    python-graphviz \
     pyzmq \
     rasterio \
     s3fs \
     scipy \
     scikit-image \
     scikit-learn \
-    toolz=0.9.0 \
-    tornado=5.0.2 \
-    xarray=0.10.8 \
-    zarr=2.2.0 \
+    toolz \
+    tornado \
+    xarray \
+    xesmf \
+    zarr \
     zict \
-    intake-xarray \
-    graphviz \
-    python-graphviz \
-    gsw \
     && conda clean -tipsy
 
 RUN pip install --upgrade pip
 
-RUN pip install fusepy \
-                click \
-                jedi \
-                kubernetes==6.0.0 \
-                dask-kubernetes==0.4.0 \
-                xesmf \
-                nbserverproxy==0.8.1 \
-                git+https://github.com/xgcm/xgcm \
+RUN pip install git+https://github.com/xgcm/xgcm \
                 git+https://github.com/Unidata/cftime.git \
                 --upgrade --no-cache-dir \
                 --upgrade-strategy only-if-needed
