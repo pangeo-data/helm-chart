@@ -88,10 +88,10 @@ RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 USER root
 COPY prepare.sh /usr/bin/prepare.sh
 RUN chmod +x /usr/bin/prepare.sh
-RUN mkdir /pre-home && chown -R $NB_USER /pre-home
+RUN chown -R $NB_USER /etc/skel
 
 ENV DASK_CONFIG=/home/$NB_USER/config.yaml
-COPY config.yaml /pre-home
+COPY config.yaml /etc/skel
 
 RUN mkdir /gcs && chown -R $NB_USER /gcs
 RUN mkdir /opt/app
