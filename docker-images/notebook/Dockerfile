@@ -1,75 +1,98 @@
-FROM jupyter/base-notebook
+# jupyter/base-noteobok uploaded 2018-06-13
+FROM jupyter/base-notebook:4417b81d04b7
 
 USER root
 RUN apt-get update \
-  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git \
+  && apt-get install -yq --no-install-recommends libfuse-dev nano fuse vim git graphviz \
+             man tree build-essential \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 USER $NB_USER
 
-RUN conda install --yes -c defaults -c pyviz/label/dev -c bokeh/channel/dev -c intake \
+RUN conda install --yes \
+    -c conda-forge \
+    -c defaults \
+    -c pyviz/label/dev \
+    -c bokeh/channel/dev \
+    -c intake \
     bokeh=0.12.16 \
+    bqplot \
+    cartopy \
     cython \
     cytoolz \
-    dask=0.17.5 \
+    dask=0.18.2 \
     dask-ml \
     datashader \
-    distributed=1.21.8 \
+    distributed=1.22.1 \
+    esmpy \
     fastparquet \
+    gcsfs=0.1.2 \
     ipywidgets \
-    jupyterlab=0.32.1 \
-    jupyterlab_launcher=0.10.5 \
+    ipyleaflet \
+    jupyter \
+    jupyterlab=0.34.2 \
+    jupyterlab_launcher=0.13.1 \
+    jupyter_client \
     holoviews \
+    libsodium \
     lz4 \
     matplotlib \
+    msgpack-python \
     nb_conda_kernels \
-    netcdf4 \
+    netcdf4>1.4 \
     nomkl \
     numba \
     numcodecs \
-    numpy=1.14.3 \
-    pandas \
+    numpy=1.15.1 \
+    pandas=0.23.2 \
     python-blosc \
+    pyzmq \
+    rasterio \
+    s3fs \
     scipy \
     scikit-image \
     scikit-learn \
-    tornado \
+    toolz=0.9.0 \
+    tornado=5.0.2 \
+    xarray=0.10.8 \
+    zarr=2.2.0 \
     zict \
     intake-xarray \
+    graphviz \
+    python-graphviz \
+    gsw \
     && conda clean -tipsy
 
 RUN pip install --upgrade pip
 
-RUN pip install fusepy click jedi kubernetes==4.0.0 dask-kubernetes s3fs \
-                gcsfs==0.1.0 zarr==2.2.0 xarray==0.10.4 \
+RUN pip install fusepy \
+                click \
+                jedi \
+                kubernetes==6.0.0 \
+                dask-kubernetes==0.4.0 \
+                xesmf \
                 nbserverproxy==0.8.1 \
-                --upgrade --no-cache-dir
+                git+https://github.com/xgcm/xgcm \
+                git+https://github.com/Unidata/cftime.git \
+                --upgrade --no-cache-dir \
+                --upgrade-strategy only-if-needed
 
-RUN pip install git+https://github.com/xgcm/xgcm \
-                --no-cache-dir \
-                --upgrade
 
 RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager \
                                  @jupyterlab/hub-extension \
-                                 @pyviz/jupyterlab_pyviz
+                                 @pyviz/jupyterlab_pyviz \
+                                 jupyter-leaflet
 
-RUN jupyter serverextension enable --py nbserverproxy --sys-prefix
+RUN jupyter serverextension enable --py nbserverproxy jupyterlab --sys-prefix
 
 USER root
 COPY prepare.sh /usr/bin/prepare.sh
 RUN chmod +x /usr/bin/prepare.sh
-RUN mkdir /home/$NB_USER/examples && chown -R $NB_USER /home/$NB_USER/examples
-RUN mkdir /pre-home && mkdir /pre-home/examples && chown -R $NB_USER /pre-home
-COPY worker-template.yaml /pre-home
-COPY examples/ /pre-home/examples/
+RUN chown -R $NB_USER /etc/skel
 
-ENV DASK_TICK_MAXIMUM_DELAY=5s
-ENV DASKERNETES_DIAGNOSTICS_LINK {JUPYTERHUB_SERVICE_PREFIX}proxy/{port}/status
-ENV DASKERNETES_WORKER_TEMPLATE_PATH /home/$NB_USER/worker-template.yaml
-ENV DASKERNETES_WORKER_NAME dask-{JUPYTERHUB_USER}-{uuid}
-ENV DASK_DIAGNOSTICS_LINK {JUPYTERHUB_SERVICE_PREFIX}proxy/{port}/status
-ENV DASK_KUBERNETES_WORKER_TEMPLATE_PATH /home/$NB_USER/worker-template.yaml
-ENV DASK_KUBERNETES_WORKER_NAME dask-{JUPYTERHUB_USER}-{uuid}
+ENV DASK_CONFIG=/home/$NB_USER/config.yaml
+COPY config.yaml /etc/skel
+COPY worker-template.yaml /etc/skel
 
 RUN mkdir /gcs && chown -R $NB_USER /gcs
 RUN mkdir /opt/app
