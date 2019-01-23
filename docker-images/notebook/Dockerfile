@@ -97,7 +97,6 @@ RUN chown -R $NB_USER /etc/skel
 
 ENV DASK_CONFIG=/home/$NB_USER/config.yaml
 COPY config.yaml /etc/skel
-COPY worker-template.yaml /etc/skel
 
 RUN mkdir /gcs && chown -R $NB_USER /gcs
 RUN mkdir /opt/app
