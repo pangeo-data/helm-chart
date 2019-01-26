@@ -19,7 +19,7 @@ jupyterhub:
 
   singleuser:
     image:
-      name: pangeo/pangeo-notebook
+      name: pangeo/base-notebook
       tag: 2019.01.25
     defaultUrl: "/lab"
     cmd: jupyter-labhub
