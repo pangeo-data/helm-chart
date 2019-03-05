@@ -9,6 +9,7 @@ install:
 - pip install --default-timeout=100 git+https://github.com/jupyterhub/chartpress.git
 script:
 - chartpress --commit-range ${TRAVIS_COMMIT_RANGE} --tag `date +%y.%m.%d`
+- git diff
 
 deploy:
   - provider: script
