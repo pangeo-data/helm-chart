@@ -27,6 +27,15 @@ jupyterhub:
   prePuller:
     hook:
       enabled: false
+  # optimizations: see https://zero-to-jupyterhub.readthedocs.io/en/latest/optimization.html?highlight=scheduling#optimizations
+  scheduling:
+    userScheduler:
+      enabled: true
+    podPriority:
+      enabled: true
+    userPlaceholder:
+      enabled: true
+      replicas: 2
 
 # Resource specifications
 # -----------------------
