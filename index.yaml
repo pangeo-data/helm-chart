@@ -2,7 +2,22 @@ apiVersion: v1
 entries:
   pangeo:
   - apiVersion: v1
-    created: 2019-04-02T20:28:51.303708884Z
+    created: "2019-05-31T12:00:44.708329887Z"
+    description: An extention of jupyterhub with extra Pangeo resources
+    digest: 17ed7f35ea434bbfcee0bbe4411ec19ca3ba9312880584746ef34cefbd81c79f
+    maintainers:
+    - email: jacob.tomlinson@informaticslab.co.uk
+      name: Jacob Tomlinson (Met Office)
+    - email: jhamman@ucar.edu
+      name: Joe Hamman (NCAR)
+    - email: guillaume.eynard-bontemps@cnes.fr
+      name: Guillaume Eynard-Bontemps (CNES)
+    name: pangeo
+    urls:
+    - https://pangeo-data.github.io/helm-chart/pangeo-19.05.31-bcc66da.tgz
+    version: 19.05.31-bcc66da
+  - apiVersion: v1
+    created: "2019-04-02T20:28:51.303708884Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 8d792a9ae1228069aa7c15116f184fd42abc1179d04341162cc1bbad074c7792
     maintainers:
@@ -17,7 +32,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.04.02-ef5490a.tgz
     version: 19.04.02-ef5490a
   - apiVersion: v1
-    created: 2019-04-02T16:50:56.280319755Z
+    created: "2019-04-02T16:50:56.280319755Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: c371f69063ec76322ddbb6d80a056da63970e833f8cddc5e2e1423a13eab8adb
     maintainers:
@@ -32,7 +47,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.04.02-b096048.tgz
     version: 19.04.02-b096048
   - apiVersion: v1
-    created: 2019-03-09T07:18:17.552592973Z
+    created: "2019-03-09T07:18:17.552592973Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 9088b7b26ae913c9a1a39cddf9c5507a295764356de91d8267dd4404a0ef391c
     maintainers:
@@ -47,7 +62,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.09-a0475df.tgz
     version: 19.03.09-a0475df
   - apiVersion: v1
-    created: 2019-03-08T19:43:49.609353811Z
+    created: "2019-03-08T19:43:49.609353811Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: b4d4a8841052f45bdddbe68ea4c0d568707c1a4973d483bda86d7129443a5b0e
     maintainers:
@@ -62,7 +77,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.08-1c0e01d.tgz
     version: 19.03.08-1c0e01d
   - apiVersion: v1
-    created: 2019-03-06T05:14:40.232208703Z
+    created: "2019-03-06T05:14:40.232208703Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: c7f04a688960b120a6934e9c766814e9af565e615533bab56d019306c4d3a6d0
     maintainers:
@@ -77,7 +92,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.06-6f0160c.tgz
     version: 19.03.06-6f0160c
   - apiVersion: v1
-    created: 2019-03-05T12:22:12.502331963Z
+    created: "2019-03-05T12:22:12.502331963Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: bc35f8d5bb4dc01ee654441267175f41e005bb08443124a1f3da226153f226d5
     maintainers:
@@ -92,7 +107,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.05.tgz
     version: 19.03.05
   - apiVersion: v1
-    created: 2019-03-05T12:12:16.45454191Z
+    created: "2019-03-05T12:12:16.45454191Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: bd7cf78d22c0fa15e141990660adddc1dec813b17939fa393942f4aeb65c6425
     maintainers:
@@ -107,7 +122,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.05-3af5f7f.tgz
     version: 19.03.05-3af5f7f
   - apiVersion: v1
-    created: 2018-09-21T15:21:05.543548449Z
+    created: "2018-09-21T15:21:05.543548449Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 922d793135269c04b04f96976f2fc836bcfbe74e758ad0b0543e6933fec8bd53
     maintainers:
@@ -118,7 +133,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-ede11f6.tgz
     version: v0.1.1-ede11f6
   - apiVersion: v1
-    created: 2018-05-18T17:45:50.498798249Z
+    created: "2018-05-18T17:45:50.498798249Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 85685d25644bd3c15470c517463df128765b7856bb67d3c6a0b2dbbc0b52612d
     maintainers:
@@ -129,7 +144,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-ebd6b1d.tgz
     version: v0.1.1-ebd6b1d
   - apiVersion: v1
-    created: 2019-01-23T18:16:24.502439244Z
+    created: "2019-01-23T18:16:24.502439244Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 63d8e8a1241b24a96c530441db439b60a77dfcaa02d40aefd00e2f970a2e316e
     maintainers:
@@ -140,7 +155,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-e5fa7c4.tgz
     version: v0.1.1-e5fa7c4
   - apiVersion: v1
-    created: 2018-07-13T14:31:10.245243458Z
+    created: "2018-07-13T14:31:10.245243458Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: ccd6f48540ac65a222c9b34ba23568d0027c8b4617567531519a446cb3c7804a
     maintainers:
@@ -151,7 +166,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-ce2f7f5.tgz
     version: v0.1.1-ce2f7f5
   - apiVersion: v1
-    created: 2019-02-27T15:49:00.741838637Z
+    created: "2019-02-27T15:49:00.741838637Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 5a5c4545431028ee8a3b44cf8d1c38461172ded43cdb79c69c708ecd491a199b
     maintainers:
@@ -162,7 +177,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-c04d8fa.tgz
     version: v0.1.1-c04d8fa
   - apiVersion: v1
-    created: 2019-01-31T19:19:36.073245585Z
+    created: "2019-01-31T19:19:36.073245585Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 6861e6e5946ee5547596ab9a5a37565f90f2378b6b8cea9a693dbfe90209d5dd
     maintainers:
@@ -173,7 +188,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-c02878a.tgz
     version: v0.1.1-c02878a
   - apiVersion: v1
-    created: 2018-09-03T17:57:05.164121281Z
+    created: "2018-09-03T17:57:05.164121281Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 72cf7bbececed54394fa8a98a90a6d1e57b04cf35e2977bdd593cb8435fbb0fd
     maintainers:
@@ -184,7 +199,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-a8f057f.tgz
     version: v0.1.1-a8f057f
   - apiVersion: v1
-    created: 2018-11-14T18:36:16.151866835Z
+    created: "2018-11-14T18:36:16.151866835Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: b63cf5b95df15ccfa1ccbb9f0242b9f7ac770962e933a763d51670e2f0ff63ef
     maintainers:
@@ -195,7 +210,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-a167b0f.tgz
     version: v0.1.1-a167b0f
   - apiVersion: v1
-    created: 2018-05-18T20:09:24.263377709Z
+    created: "2018-05-18T20:09:24.263377709Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: cfeb9bc4033689841423c8d7fd0830afab7aedb1d25a28b7af33e3fed8030eb0
     maintainers:
@@ -206,7 +221,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-a14d55b.tgz
     version: v0.1.1-a14d55b
   - apiVersion: v1
-    created: 2018-06-13T20:56:08.078968484Z
+    created: "2018-06-13T20:56:08.078968484Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 236d022603c218a2b3d8b7c21de3ec7b666acf712287dc1cd5425e3369f38cdd
     maintainers:
@@ -217,7 +232,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-9d7f08b.tgz
     version: v0.1.1-9d7f08b
   - apiVersion: v1
-    created: 2018-05-20T19:41:31.271505134Z
+    created: "2018-05-20T19:41:31.271505134Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 69f5c215173f4b8327dc78a810d849609ff2b72201401c011d26f82b814d7d91
     maintainers:
@@ -228,7 +243,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-95ab292.tgz
     version: v0.1.1-95ab292
   - apiVersion: v1
-    created: 2018-11-29T14:56:36.106495168Z
+    created: "2018-11-29T14:56:36.106495168Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: a52ced7e4665b35abfc484d20f7fc021133c373585cff43b39f5e0db3055b0d1
     maintainers:
@@ -239,7 +254,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-93765e6.tgz
     version: v0.1.1-93765e6
   - apiVersion: v1
-    created: 2018-08-26T03:16:48.057157038Z
+    created: "2018-08-26T03:16:48.057157038Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: d4500d2f13a2a15ff174691cdfda269c14583397a2c2f905675b5954b8bd7777
     maintainers:
@@ -250,7 +265,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-92c4bfd.tgz
     version: v0.1.1-92c4bfd
   - apiVersion: v1
-    created: 2019-01-23T18:07:21.84851309Z
+    created: "2019-01-23T18:07:21.84851309Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 52304a4bfddaa7c691529c111d7cffd4cc298c38c0be99c7c98bb5cbb743aaf8
     maintainers:
@@ -261,7 +276,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-8eb9c1a.tgz
     version: v0.1.1-8eb9c1a
   - apiVersion: v1
-    created: 2018-08-21T18:01:11.205069432Z
+    created: "2018-08-21T18:01:11.205069432Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: d7f8dbfe120a0ff12c19b2a546b3fd612fcb861b2ce7f7f4e01dff5a18b0d3b4
     maintainers:
@@ -272,7 +287,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-8c92298.tgz
     version: v0.1.1-8c92298
   - apiVersion: v1
-    created: 2018-12-18T10:39:15.780991122Z
+    created: "2018-12-18T10:39:15.780991122Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 9e10db64b1680f372375146f46f239a1d495c60a8999853ebec8740ffb202aba
     maintainers:
@@ -283,7 +298,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-86665a6.tgz
     version: v0.1.1-86665a6
   - apiVersion: v1
-    created: 2018-06-18T02:46:06.710892569Z
+    created: "2018-06-18T02:46:06.710892569Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 6382461c48c9526a40a8adb2e4248b616b9331ed25b739a141ac91eef51c3e6a
     maintainers:
@@ -294,7 +309,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-85dc5c9.tgz
     version: v0.1.1-85dc5c9
   - apiVersion: v1
-    created: 2018-08-14T13:28:36.233160933Z
+    created: "2018-08-14T13:28:36.233160933Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 8a30850ce233f0bfcfdee159f607611168855f0fc2a4ba3859239a56b4e31c27
     maintainers:
@@ -305,7 +320,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-78d567a.tgz
     version: v0.1.1-78d567a
   - apiVersion: v1
-    created: 2018-05-19T11:35:49.788607771Z
+    created: "2018-05-19T11:35:49.788607771Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 896d17e19fa0a8003f62a111a83655673f679c2ef1f7c114c1a99f865eb3634c
     maintainers:
@@ -316,7 +331,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-74d2d85.tgz
     version: v0.1.1-74d2d85
   - apiVersion: v1
-    created: 2018-09-22T03:34:54.813020319Z
+    created: "2018-09-22T03:34:54.813020319Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 1f5d5e68657edcd1cbd96ddaf282528d4de382139069f939437463c339e07fe2
     maintainers:
@@ -327,7 +342,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-69b4a02.tgz
     version: v0.1.1-69b4a02
   - apiVersion: v1
-    created: 2018-11-15T22:15:32.30365981Z
+    created: "2018-11-15T22:15:32.30365981Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 83c38ce9f1728c82b3bb66adc6cef19b1d3ba545d82eeb8dbd6deaa138192ce8
     maintainers:
@@ -338,7 +353,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-66ee05c.tgz
     version: v0.1.1-66ee05c
   - apiVersion: v1
-    created: 2018-07-18T10:16:00.566222544Z
+    created: "2018-07-18T10:16:00.566222544Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: cb8fa271df7556620f6c2bd9b5382ca66564f463e334ae29b4ff8d59bafd88c3
     maintainers:
@@ -349,7 +364,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-51c8df1.tgz
     version: v0.1.1-51c8df1
   - apiVersion: v1
-    created: 2018-05-18T03:13:20.349251557Z
+    created: "2018-05-18T03:13:20.349251557Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: fed7466218cd0fde0b2b7f8466f1eea8671bd4da24817ae57052d29de318f189
     maintainers:
@@ -360,7 +375,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-3d2ad7a.tgz
     version: v0.1.1-3d2ad7a
   - apiVersion: v1
-    created: 2018-06-18T01:15:39.427551779Z
+    created: "2018-06-18T01:15:39.427551779Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 97102cb747aa41c253fba587bc0aa63147d5f10aad74acf5587cfce0ce2ef729
     maintainers:
@@ -371,7 +386,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-3aa1501.tgz
     version: v0.1.1-3aa1501
   - apiVersion: v1
-    created: 2018-07-18T22:46:16.22133237Z
+    created: "2018-07-18T22:46:16.22133237Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: e048753f1ec8ba92f2832004d1d25c09461316e0e9ae4b448fd0b72bb839164e
     maintainers:
@@ -382,7 +397,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-2dd9b30.tgz
     version: v0.1.1-2dd9b30
   - apiVersion: v1
-    created: 2018-07-19T11:02:45.367556668Z
+    created: "2018-07-19T11:02:45.367556668Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 8967653ccb6d9deedce81808e9df975f6bfd4b7b5a135ac0cc62c07ca4826a4a
     maintainers:
@@ -393,7 +408,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-2d5c8b4.tgz
     version: v0.1.1-2d5c8b4
   - apiVersion: v1
-    created: 2018-07-13T14:18:42.650050201Z
+    created: "2018-07-13T14:18:42.650050201Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: b136832e399c8f60c1c881b3440502f3d585292a5afcd7e44fd42fb036d94c43
     maintainers:
@@ -404,7 +419,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-2c52051.tgz
     version: v0.1.1-2c52051
   - apiVersion: v1
-    created: 2018-07-18T10:56:48.55018316Z
+    created: "2018-07-18T10:56:48.55018316Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: b15461e171340df2e8a02d852673b592f90e14145820f81afbf54083f20ace3f
     maintainers:
@@ -415,7 +430,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-2bd2369.tgz
     version: v0.1.1-2bd2369
   - apiVersion: v1
-    created: 2018-05-07T16:48:10.801998438Z
+    created: "2018-05-07T16:48:10.801998438Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 2e8e9b2a84fa2e61063dffcbe331c28418412571c763b39c7de1dd1fba2cec50
     maintainers:
@@ -426,7 +441,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-08b10bd.tgz
     version: v0.1.1-08b10bd
   - apiVersion: v1
-    created: 2018-06-14T01:10:01.836730621Z
+    created: "2018-06-14T01:10:01.836730621Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: b950b2a8be62464226234bf9b87bf2ee66e8839651a0a6642c5d02a7bfb1d16b
     maintainers:
@@ -437,7 +452,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-0234fc7.tgz
     version: v0.1.1-0234fc7
   - apiVersion: v1
-    created: 2019-01-23T18:16:18.046055412Z
+    created: "2019-01-23T18:16:18.046055412Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 8672faf4fcf2ab736ef699f415cf59800474850d4812bf15320624df1149e21e
     maintainers:
@@ -448,7 +463,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.1-2366916.tgz
     version: v0.1.1-2366916
   - apiVersion: v1
-    created: 2018-03-27T11:45:11.632782+01:00
+    created: "2018-03-27T11:45:11.632782+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: de9920c567cc8849e81812ef0e4d3912865300557e395d5bf40997327687689a
     maintainers:
@@ -459,7 +474,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-0.1.0-ef74d6d.tgz
     version: 0.1.0-ef74d6d
   - apiVersion: v1
-    created: 2018-03-29T10:17:10.700772191+01:00
+    created: "2018-03-29T10:17:10.700772191+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 5cfb297e16d60518a2bab708a57594441bf49e9b93f5760535cd73deb801889e
     maintainers:
@@ -470,7 +485,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-ce012bd.tgz
     version: v0.1.0-ce012bd
   - apiVersion: v1
-    created: 2018-04-30T21:43:59.183445555Z
+    created: "2018-04-30T21:43:59.183445555Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: c78c259dfa88993e852f5872b72fcd2be2afcfd6bb04769b13ec9628328a9ad1
     maintainers:
@@ -481,7 +496,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-c1651d3.tgz
     version: v0.1.0-c1651d3
   - apiVersion: v1
-    created: 2018-03-27T14:09:09.770741+01:00
+    created: "2018-03-27T14:09:09.770741+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 2571f7557b34d0e1c146c8e550cd990c94fc7199a4e8cca709b51010a586ba3f
     maintainers:
@@ -492,7 +507,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-0.1.0-b903ccd.tgz
     version: 0.1.0-b903ccd
   - apiVersion: v1
-    created: 2018-03-28T09:27:15.858432+01:00
+    created: "2018-03-28T09:27:15.858432+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 83df6257ea5469a9822b6501404a08f856adedd91f0d5c94f5dc0402f253a519
     maintainers:
@@ -503,7 +518,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-92c1379.tgz
     version: v0.1.0-92c1379
   - apiVersion: v1
-    created: 2018-03-29T10:21:23.854048291+01:00
+    created: "2018-03-29T10:21:23.854048291+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: e5f83e0c303287a0e5d3985c2a1785aad6671b6a8d49225181d74042ed9e7c5a
     maintainers:
@@ -514,7 +529,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-673e876.tgz
     version: v0.1.0-673e876
   - apiVersion: v1
-    created: 2018-03-28T11:32:58.440120797+01:00
+    created: "2018-03-28T11:32:58.440120797+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: f423e827aa4e5926bc055d7695b331aa2bebe42b4f1235f985c0fd896f7a7abd
     maintainers:
@@ -525,7 +540,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-51c2a22.tgz
     version: v0.1.0-51c2a22
   - apiVersion: v1
-    created: 2018-04-30T10:17:42.821399165Z
+    created: "2018-04-30T10:17:42.821399165Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: fec217f44bb40873c84b8bd80d6939ce338f16e910375735c73900a140e8aeb8
     maintainers:
@@ -536,7 +551,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-36c7a95.tgz
     version: v0.1.0-36c7a95
   - apiVersion: v1
-    created: 2018-03-28T11:30:12.054157059+01:00
+    created: "2018-03-28T11:30:12.054157059+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 4dad51a445d53c8df15489e0624921bb6db8a50986556320b35a3e941f2f2866
     maintainers:
@@ -547,7 +562,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-18b2306.tgz
     version: v0.1.0-18b2306
   - apiVersion: v1
-    created: 2018-05-01T15:23:58.376944496Z
+    created: "2018-05-01T15:23:58.376944496Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: e51eaead177ba06116d8a0d9ee841b2a3f704b31403643dab4782a8fcaaa8c91
     maintainers:
@@ -558,7 +573,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-10c66b7.tgz
     version: v0.1.0-10c66b7
   - apiVersion: v1
-    created: 2018-03-28T09:24:57.680295+01:00
+    created: "2018-03-28T09:24:57.680295+01:00"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 2e3e173435d6cdc9cdf16362d3bbfdbc8ab334c48d6c37299ead2e2c639edd00
     maintainers:
@@ -569,7 +584,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-0.1.0-0cf0d00.tgz
     version: 0.1.0-0cf0d00
   - apiVersion: v1
-    created: 2018-05-03T18:52:18.910093449Z
+    created: "2018-05-03T18:52:18.910093449Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: bfba9cdfbd35f097eba056c68c17f2d1af7428c1c97db49b0b712d5fda177b69
     maintainers:
@@ -580,7 +595,7 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-07bc2e9.tgz
     version: v0.1.0-07bc2e9
   - apiVersion: v1
-    created: 2018-05-03T18:15:45.343298912Z
+    created: "2018-05-03T18:15:45.343298912Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 8945293f0de91db968aa47704684184321790744a65776c8a825a97c82161be2
     maintainers:
@@ -590,4 +605,4 @@ entries:
     urls:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-052e5ec.tgz
     version: v0.1.0-052e5ec
-generated: 2019-04-02T20:28:51.301407654Z
+generated: "2019-05-31T12:00:44.704844283Z"
