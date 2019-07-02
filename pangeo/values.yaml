@@ -19,14 +19,24 @@ jupyterhub:
 
   singleuser:
     image:
-      name: pangeo/notebook
-      tag: v0.1.1-e5fa7c4
+      name: pangeo/base-notebook
+      tag: 2019.01.25
     defaultUrl: "/lab"
     cmd: jupyter-labhub
     serviceAccountName: daskkubernetes
   prePuller:
     hook:
       enabled: false
+  # optimizations: see https://zero-to-jupyterhub.readthedocs.io/en/latest/optimization.html?highlight=scheduling#optimizations
+  scheduling:
+    userScheduler:
+      enabled: true
+      replicas: 2
+    podPriority:
+      enabled: true
+    userPlaceholder:
+      enabled: true
+      replicas: 2
 
 # Resource specifications
 # -----------------------

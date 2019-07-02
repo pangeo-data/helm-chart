@@ -34,3 +34,7 @@ helm upgrade <release name> pangeo/pangeo -f /path/to/custom/values.yaml
 # Delete Pangeo
 helm delete <release name> --purge
 ```
+
+## Default user image
+
+This Helm chart uses the [pangeo/base-notebook](https://hub.docker.com/r/pangeo/base-notebook) Docker image as its default user image. This image is configured and maintained in the [Pangeo-stacks](https://github.com/pangeo-data/pangeo-stacks) repository and only includes a very basic environment. Pangeo-stacks includes other images that can be readily used by this chart.
