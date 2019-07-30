@@ -86,7 +86,7 @@ jobs:
               cd pangeo
               helm dependency update
               cd -
-              helm upgrade testhub --wait --install pangeo --namespace=test
+              helm upgrade testhub --wait --install pangeo --namespace=test -f ./tests/minikube-config.yaml
       # - run:
       #     command: |
       #       /home/circleci/miniconda/envs/pangeo-helm-chart-test/bin/py.test tests -s --verbose
