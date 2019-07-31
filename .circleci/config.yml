@@ -1,0 +1,97 @@
+version: 2
+image: circleci/classic:201808-01
+
+jobs:
+  build:
+    machine:
+      image: circleci/classic:201808-01
+    environment:
+      MINIKUBE_WANTUPDATENOTIFICATION: false
+      MINIKUBE_WANTREPORTERRORPROMPT: false
+      CHANGE_MINIKUBE_NONE_USER: true
+      PYTHON: "3.7"
+      ENV_NAME: "pangeo-helm-chart-test"
+
+    steps:
+      - checkout
+      - run:
+          command: |
+            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+      # Use minikube v0.25.2 as v0.26.0 requires systemd to manage the daemons which
+      # is not available in the Ubuntu 14.04 image used by Circle CI with the
+      # "machine: true" option.
+      - run:
+          command: |
+            sudo curl -L https://git.io/get_helm.sh | bash
+      - run:
+          command: |
+            curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+      - run:
+          command: |
+            sudo minikube start --vm-driver=none --kubernetes-version v1.15.0
+            sudo chown -R $USER.$USER ~/.minikube
+            sudo chown -R $USER.$USER ~/.kube
+      - run:
+          command: |
+            sudo -E minikube update-context
+      - run:
+          command: |
+            JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}'; until sudo kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do sleep 1; done
+      - run:
+          command: |
+            sudo kubectl cluster-info
+      - run:
+          command: |
+            sudo kubectl run circleci-example --image=nginx
+      - run:
+          command: |
+            sudo kubectl get deployment
+      - run:
+          command: |
+            kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$EMAIL
+            kubectl create serviceaccount tiller --namespace=kube-system
+            kubectl create clusterrolebinding tiller --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
+            helm init --service-account tiller
+            kubectl --namespace=kube-system patch deployment tiller-deploy --type=json --patch='[{"op": "add", "path": "/spec/template/spec/containers/0/command", "value": ["/tiller", "--listen=localhost:44134"]}]'
+
+      - restore_cache:
+          keys:
+            - miniconda-v1-{{ checksum "ci/environment-3.7.yml" }}
+      - run:
+          name: install miniconda
+          command: |
+              if [ ! -d "/home/circleci/miniconda" ]; then
+                wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+                bash miniconda.sh -b -p $HOME/miniconda
+                export PATH="$HOME/miniconda/bin:$PATH"
+                conda config --set always_yes yes --set changeps1 no
+              fi
+              sudo chown -R $USER.$USER $HOME
+      - run:
+          name: configure conda
+          command: |
+              export PATH="$HOME/miniconda/bin:$PATH"
+              if [ ! -d "/home/circleci/miniconda/envs/pangeo-helm-chart-test" ]; then
+                conda update -q conda
+                conda env create -f ci/environment-${PYTHON}.yml --name=${ENV_NAME}
+                source activate ${ENV_NAME}
+              fi
+              conda env list
+              conda list ${ENV_NAME}
+      - save_cache:
+          key: miniconda-v1-{{ checksum "ci/environment-3.7.yml" }}
+          paths:
+            - "/home/circleci/miniconda"
+      - run:
+          name: deploy chart
+          command: |
+              helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
+              helm repo update
+              cd pangeo
+              helm dependency update
+              cd -
+              helm upgrade testhub --wait --install pangeo --namespace=test -f ./tests/minikube-config.yaml
+      # - run:
+      #     command: |
+      #       /home/circleci/miniconda/envs/pangeo-helm-chart-test/bin/py.test tests -s --verbose
+
