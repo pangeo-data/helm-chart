@@ -28,7 +28,7 @@ jobs:
             curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
       - run:
           command: |
-            sudo minikube start --vm-driver=none --kubernetes-version v1.15.0 --extra-config=kubelet.cgroup-driver=systemd
+            sudo minikube start --vm-driver=none --kubernetes-version v1.15.0
             sudo chown -R $USER.$USER ~/.minikube
             sudo chown -R $USER.$USER ~/.kube
       - run:
