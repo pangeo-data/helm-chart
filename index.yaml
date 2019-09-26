@@ -2,6 +2,21 @@ apiVersion: v1
 entries:
   pangeo:
   - apiVersion: v1
+    created: "2019-09-26T16:04:56.644623697Z"
+    description: An extention of jupyterhub with extra Pangeo resources
+    digest: 65c6c43f73e4d37e526ed8370cd241e3d5838a86670ff4368e06818c36ac42d1
+    maintainers:
+    - email: jacob.tomlinson@informaticslab.co.uk
+      name: Jacob Tomlinson (Met Office)
+    - email: jhamman@ucar.edu
+      name: Joe Hamman (NCAR)
+    - email: guillaume.eynard-bontemps@cnes.fr
+      name: Guillaume Eynard-Bontemps (CNES)
+    name: pangeo
+    urls:
+    - https://pangeo-data.github.io/helm-chart/pangeo-19.09.26-dd6574b.tgz
+    version: 19.09.26-dd6574b
+  - apiVersion: v1
     created: "2019-09-26T15:30:15.207004548Z"
     description: An extention of jupyterhub with extra Pangeo resources
     digest: 582cbb09b2d148e423c378f5de7d7f57d0f403554a90bb08d78736f4892699fc
@@ -665,4 +680,4 @@ entries:
     urls:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-052e5ec.tgz
     version: v0.1.0-052e5ec
-generated: "2019-09-26T15:30:15.202990989Z"
+generated: "2019-09-26T16:04:56.640771901Z"
