@@ -22,7 +22,6 @@ jupyterhub:
       name: pangeo/base-notebook
       tag: 2019.09.23
     defaultUrl: "/lab"
-    cmd: jupyter
     serviceAccountName: daskkubernetes
   prePuller:
     hook:
