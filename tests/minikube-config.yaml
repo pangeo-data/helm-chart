@@ -1,6 +1,6 @@
 jupyterhub:
   proxy:
-    secretToken: 97141abb55ea5321867979cb57bb2e6a86a2f4d6bb166fca45aedb07c212c42d
+    secretToken: "97141abb55ea5321867979cb57bb2e6a86a2f4d6bb166fca45aedb07c212c42d"
     service:
       type: NodePort
       nodePorts:
@@ -12,7 +12,7 @@ jupyterhub:
           cpu: 0
 
   hub:
-    cookieSecret: 1470700e01f77171c2c67b12130c25081dfbdf2697af8c2f2bd05621b31100bf
+    cookieSecret: "1470700e01f77171c2c67b12130c25081dfbdf2697af8c2f2bd05621b31100bf"
     db:
       type: sqlite-memory
     resources:
@@ -22,8 +22,9 @@ jupyterhub:
     services:
       test:
         admin: true
-        apiToken: 0cc05feaefeeb29179e924ffc6d3886ffacf0d1a28ab225f5c210436ffc5cfd5
-
+        apiToken: "0cc05feaefeeb29179e924ffc6d3886ffacf0d1a28ab225f5c210436ffc5cfd5"
+      dask-gateway:
+        apiToken: "6b9f64d7f421a3ee93fb64ba28c9284387e88893d2e1712c5ef1cdf56e565769"
 
   singleuser:
     storage:
@@ -41,3 +42,11 @@ jupyterhub:
 
   debug:
     enabled: true
+
+dask-gateway:
+  gateway:
+    proxyToken: "9e942640fd8ee885358e9d36991a22cccec58c8f855aebf7a95644f46d0eb9c0"
+    auth:
+      type: jupyterhub
+      jupyterhub:
+        apiToken: "6b9f64d7f421a3ee93fb64ba28c9284387e88893d2e1712c5ef1cdf56e565769"

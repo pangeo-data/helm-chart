@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           command: |
-            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.14.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
       # Use minikube v0.25.2 as v0.26.0 requires systemd to manage the daemons which
       # is not available in the Ubuntu 14.04 image used by Circle CI with the
       # "machine: true" option.
@@ -28,7 +28,7 @@ jobs:
             curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
       - run:
           command: |
-            sudo minikube start --vm-driver=none --kubernetes-version v1.15.0
+            sudo minikube start --vm-driver=none --kubernetes-version v1.14.0
             sudo chown -R $USER.$USER ~/.minikube
             sudo chown -R $USER.$USER ~/.kube
       - run:
@@ -86,11 +86,12 @@ jobs:
           name: deploy chart
           command: |
               helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
+              helm repo add dask-gateway https://dask.org/dask-gateway-helm-repo
               helm repo update
               cd pangeo
               helm dependency update
               cd -
-              helm upgrade testhub --wait --install pangeo --namespace=test -f ./tests/minikube-config.yaml
+              helm upgrade --debug testhub --wait --install pangeo --namespace=test -f ./tests/minikube-config.yaml
       # - run:
       #     command: |
       #       /home/circleci/miniconda/envs/pangeo-helm-chart-test/bin/py.test tests -s --verbose
