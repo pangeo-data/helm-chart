@@ -3,3 +3,4 @@ charts:
     repo:
       git: pangeo-data/helm-chart
       published: https://pangeo-data.github.io/helm-chart
+    images: {}
