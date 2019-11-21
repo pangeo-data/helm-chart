@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           command: |
-            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.14.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
+            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.15.0/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
       # Use minikube v0.25.2 as v0.26.0 requires systemd to manage the daemons which
       # is not available in the Ubuntu 14.04 image used by Circle CI with the
       # "machine: true" option.
@@ -28,7 +28,7 @@ jobs:
             curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
       - run:
           command: |
-            sudo minikube start --vm-driver=none --kubernetes-version v1.14.0
+            sudo minikube start --vm-driver=none --kubernetes-version v1.15.0
             sudo chown -R $USER.$USER ~/.minikube
             sudo chown -R $USER.$USER ~/.kube
       - run:

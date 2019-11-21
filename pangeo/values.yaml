@@ -49,8 +49,14 @@ jupyterhub:
 #      guarantee: 2G
 
 dask-gateway:
+  # dask-gateway configuration goes here
+  # See https://github.com/dask/dask-gateway/blob/master/resources/helm/dask-gateway/values.yaml
   gateway:
     clusterManager:
+      image:
+        name: pangeo/base-notebook
+        tag: 2019.09.23
+
       clusterStartTimeout: 600
       workerStartTimeout: 600
       worker:
