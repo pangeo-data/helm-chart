@@ -50,3 +50,20 @@ dask-gateway:
       type: jupyterhub
       jupyterhub:
         apiToken: "6b9f64d7f421a3ee93fb64ba28c9284387e88893d2e1712c5ef1cdf56e565769"
+
+    resources:
+      requests:
+        memory: 0
+        cpu: 0
+
+  schedulerProxy:
+    resources:
+      requests:
+        memory: 0
+        cpu: 0
+
+  webProxy:
+    resources:
+      requests:
+        memory: 0
+        cpu: 0
