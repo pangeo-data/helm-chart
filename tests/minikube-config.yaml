@@ -45,25 +45,31 @@ jupyterhub:
 
 dask-gateway:
   gateway:
-    proxyToken: "9e942640fd8ee885358e9d36991a22cccec58c8f855aebf7a95644f46d0eb9c0"
+    proxyToken: "0fd8ff0259f6ced7fc27bb5ebcad307dacd4e3685e3ca24d46856c73cc113981"
     auth:
       type: jupyterhub
       jupyterhub:
         apiToken: "6b9f64d7f421a3ee93fb64ba28c9284387e88893d2e1712c5ef1cdf56e565769"
 
-    resources:
-      requests:
-        memory: 0
-        cpu: 0
+    clusterManager:
+      scheduler:
+        cores:
+          request: 0.1
+        memory:
+          request: 256M
 
-  schedulerProxy:
-    resources:
-      requests:
-        memory: 0
-        cpu: 0
+      worker:
+        cores:
+          request: 0.1
+        memory:
+          request: 256M
 
   webProxy:
-    resources:
-      requests:
-        memory: 0
-        cpu: 0
+    service:
+      type: NodePort
+      nodePort: 30200
+
+  schedulerProxy:
+    service:
+      type: NodePort
+      nodePort: 30201
