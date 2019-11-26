@@ -6,3 +6,6 @@ dependencies:
   import-values:
     - child: rbac
       parent: rbac
+- name: dask-gateway
+  version: "0.5.0"
+  repository: 'https://dask.org/dask-gateway-helm-repo/'

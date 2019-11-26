@@ -84,13 +84,15 @@ jobs:
             - "/home/circleci/miniconda"
       - run:
           name: deploy chart
+          no_output_timeout: 20m
           command: |
               helm repo add jupyterhub https://jupyterhub.github.io/helm-chart
+              helm repo add dask-gateway https://dask.org/dask-gateway-helm-repo
               helm repo update
               cd pangeo
               helm dependency update
               cd -
-              helm upgrade testhub --wait --install pangeo --namespace=test -f ./tests/minikube-config.yaml
+              helm upgrade --debug testhub --wait --timeout=1200 --install pangeo --namespace=test -f ./tests/minikube-config.yaml
       # - run:
       #     command: |
       #       /home/circleci/miniconda/envs/pangeo-helm-chart-test/bin/py.test tests -s --verbose
