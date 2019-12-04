@@ -1,11 +1,11 @@
 # requirements.yaml
 dependencies:
 - name: jupyterhub
-  version: "0.9.0-alpha.1.051.4cf8531"
+  version: "0.9.0-alpha.1.085.6ccbe82"
   repository: 'https://jupyterhub.github.io/helm-chart/'
   import-values:
     - child: rbac
       parent: rbac
 - name: dask-gateway
-  version: "0.5.0"
+  version: "0.6.0"
   repository: 'https://dask.org/dask-gateway-helm-repo/'
