@@ -36,7 +36,7 @@ jupyterhub:
     userPlaceholder:
       enabled: true
       replicas: 2
-	hub:
+  hub:
     services:
       dask-gateway:
         # This makes the gateway available at ${HUB_URL}/services/dask-gateway
