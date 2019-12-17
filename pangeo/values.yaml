@@ -36,6 +36,11 @@ jupyterhub:
     userPlaceholder:
       enabled: true
       replicas: 2
+  hub:
+    services:
+      dask-gateway:
+        # This makes the gateway available at ${HUB_URL}/services/dask-gateway
+        url: http://web-public-dev-staging-dask-gateway
 
 # Resource specifications
 # -----------------------
