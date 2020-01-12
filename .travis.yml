@@ -8,7 +8,7 @@ install:
 - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
 - pip install chartpress==0.3.2
 script:
-- chartpress --image-prefix=. --tag `date +%y.%m.%d`
+- chartpress --tag `date +%y.%m.%d`
 - git diff
 
 deploy:
