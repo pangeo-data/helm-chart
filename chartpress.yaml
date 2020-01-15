@@ -1,7 +1,7 @@
+# The chartpress CLI configuration reference is available at
+# https://github.com/jupyterhub/chartpress#configuration.
 charts:
   - name: pangeo
     repo:
       git: pangeo-data/helm-chart
       published: https://pangeo-data.github.io/helm-chart
-    images: {}
-    imagePrefix: 

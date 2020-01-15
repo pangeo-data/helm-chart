@@ -1,26 +1,19 @@
-sudo: required
-
+dist: bionic
 language: python
-python:
-- '3.6'
+python: 3.6
 
 install:
 - curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
-- pip install chartpress==0.3.2
+- pip install chartpress==0.6
+
 script:
-- chartpress --image-prefix=. --tag `date +%y.%m.%d`
+- chartpress
 - git diff
 
 deploy:
   - provider: script
-    skip_cleanup: true
-    script: bash deploy.sh 
+    script: bash deploy.sh
     on:
-      branch: master
-      tags: false
-  - provider: script
-    skip_cleanup: true
-    script: bash deploy.sh --tag `date +%y.%m.%d`
-    on:
+      # Only deploy when pushing to master branch or a git tag
       branch: master
       tags: true
