@@ -15,5 +15,7 @@ deploy:
     script: bash deploy.sh
     on:
       # Only deploy when pushing to master branch or a git tag
-      branch: master
-      tags: true
+      condition: '"$TRAVIS_TAG" != "" || "$TRAVIS_BRANCH" == "master"'
+      # Without all_branches: true, the condition will only be evaluated for the
+      # master branch and tags.
+      all_branches: true
