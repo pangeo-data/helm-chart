@@ -22,7 +22,7 @@ jobs:
       # "machine: true" option.
       - run:
           command: |
-            sudo https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
+            sudo curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
       - run:
           command: |
             curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
