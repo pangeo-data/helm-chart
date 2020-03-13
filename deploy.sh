@@ -20,7 +20,6 @@ export GIT_SSH_COMMAND="ssh -i ${PWD}/deploy-key.rsa"
 
 # Initialize helm CLI for use by chartpress to package a helm chart and publish
 # it using configuration in chartpress.yaml.
-helm init --client-only
 chartpress --publish-chart $@
 
 # Provide a trace of what chartpress did for the logs
