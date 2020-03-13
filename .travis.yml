@@ -3,7 +3,7 @@ language: python
 python: 3.6
 
 install:
-- curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get | bash
+- curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
 - pip install chartpress==0.6
 
 script:
