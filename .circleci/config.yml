@@ -22,7 +22,7 @@ jobs:
       # "machine: true" option.
       - run:
           command: |
-            sudo curl -L https://git.io/get_helm.sh | bash
+            sudo curl -L https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 | bash
       - run:
           command: |
             curl -Lo minikube https://storage.googleapis.com/minikube/releases/v1.2.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
@@ -49,10 +49,6 @@ jobs:
       - run:
           command: |
             kubectl create clusterrolebinding cluster-admin-binding --clusterrole=cluster-admin --user=$EMAIL
-            kubectl create serviceaccount tiller --namespace=kube-system
-            kubectl create clusterrolebinding tiller --clusterrole=cluster-admin --serviceaccount=kube-system:tiller
-            helm init --service-account tiller
-            kubectl --namespace=kube-system patch deployment tiller-deploy --type=json --patch='[{"op": "add", "path": "/spec/template/spec/containers/0/command", "value": ["/tiller", "--listen=localhost:44134"]}]'
 
       - restore_cache:
           keys:
@@ -92,7 +88,8 @@ jobs:
               cd pangeo
               helm dependency update
               cd -
-              helm upgrade --debug testhub --wait --timeout=1200 --install pangeo --namespace=test -f ./tests/minikube-config.yaml
+              kubectl create namespace test
+              helm upgrade --debug testhub --atomic --timeout=1200s --install pangeo --namespace=test -f ./tests/minikube-config.yaml
       # - run:
       #     command: |
       #       /home/circleci/miniconda/envs/pangeo-helm-chart-test/bin/py.test tests -s --verbose
