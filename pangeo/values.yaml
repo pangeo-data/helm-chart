@@ -105,3 +105,10 @@ dask-gateway:
             String("image", default="pangeo/base-notebook:2020.04.10", label="Image"),
             handler=option_handler,
         )
+
+  traefik:
+    service:
+      # We route traffic to this service through JupyterHub's configurable
+      # proxy under the /services/dask-gateway path, so we don't want it
+      # to be exposed directly as a LoadBalancer.
+      type: ClusterIP
