@@ -102,6 +102,6 @@ dask-gateway:
         c.Backend.cluster_options = Options(
             Integer("worker_cores", 2, min=1, max=4, label="Worker Cores"),
             Float("worker_memory", 4, min=1, max=8, label="Worker Memory (GiB)"),
-            String("image", default="{JUPYTER_IMAGE_SPEC}", label="Image"),
+            String("image", default="pangeo/base-notebook:2020.04.10", label="Image"),
             handler=option_handler,
         )
