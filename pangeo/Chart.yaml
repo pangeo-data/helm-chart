@@ -10,6 +10,7 @@ dependencies:
       - child: rbac
         parent: rbac
   - name: dask-gateway
+    # Make sure to update the dask-gateway CRDs in .circleci/config.yml
     version: "0.7.1"
     repository: 'https://dask.org/dask-gateway-helm-repo/'
 maintainers:

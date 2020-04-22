@@ -89,7 +89,8 @@ jobs:
               helm dependency update
               cd -
               kubectl create namespace test
-              # debugging...
+              # Install the dask-gateway CRDs. It's not clear why helm doesn't
+              # do this for us.
               kubectl apply -f https://raw.githubusercontent.com/dask/dask-gateway/0.7.1/resources/helm/dask-gateway/crds/traefik.yaml -n staging
               helm upgrade --debug testhub --atomic --timeout=1200s --install pangeo --namespace=test -f ./tests/minikube-config.yaml
       # - run:
