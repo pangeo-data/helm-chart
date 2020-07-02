@@ -54,6 +54,8 @@ jupyterhub:
 #      guarantee: 2G
 
 dask-gateway:
+  enabled: true
+
   # dask-gateway configuration goes here
   # See https://github.com/dask/dask-gateway/blob/master/resources/helm/dask-gateway/values.yaml
   # The values here are optimized for deployment within a jupyterhub.
