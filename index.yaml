@@ -334,6 +334,33 @@ entries:
     - https://pangeo-data.github.io/helm-chart/pangeo-19.03.05-3af5f7f.tgz
     version: 19.03.05-3af5f7f
   - apiVersion: v2
+    created: "2020-07-19T18:16:45.105671596Z"
+    dependencies:
+    - import-values:
+      - child: rbac
+        parent: rbac
+      name: jupyterhub
+      repository: https://jupyterhub.github.io/helm-chart/
+      version: 0.9.0
+    - name: dask-gateway
+      repository: https://dask.org/dask-gateway-helm-repo/
+      version: 0.7.1
+    description: An extention of jupyterhub with extra Pangeo resources
+    digest: eca653521097934d6cd7d586b90a220232731529280efdf55a73cb8ec7126a9e
+    maintainers:
+    - email: jacob.tomlinson@informaticslab.co.uk
+      name: Jacob Tomlinson (Met Office)
+    - email: jhamman@ucar.edu
+      name: Joe Hamman (NCAR)
+    - email: guillaume.eynard-bontemps@cnes.fr
+      name: Guillaume Eynard-Bontemps (CNES)
+    - email: erik.i.sundell@gmail.com
+      name: Erik Sundell
+    name: pangeo
+    urls:
+    - https://pangeo-data.github.io/helm-chart/pangeo-v0.2.2-n061.h40bb78b.tgz
+    version: v0.2.2-n061.h40bb78b
+  - apiVersion: v2
     created: "2020-04-22T14:43:17.248241824Z"
     dependencies:
     - import-values:
@@ -922,4 +949,4 @@ entries:
     urls:
     - https://pangeo-data.github.io/helm-chart/pangeo-v0.1.0-052e5ec.tgz
     version: v0.1.0-052e5ec
-generated: "2020-04-22T14:43:17.241087734Z"
+generated: "2020-07-19T18:16:45.100094118Z"
