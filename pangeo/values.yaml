@@ -53,7 +53,15 @@ jupyterhub:
 #      limit: 4G
 #      guarantee: 2G
 
+dask-kubernetes:
+  # Enabling this means to install a Kubernetes ServiceAccount, RoleBinding, and
+  # Role which is part of this Helm chart. To fully disable the use of these,
+  # you should not only set this enabled flag to false but also set
+  # jupyterhub.singleuser.serviceAccountName to null.
+  enabled: true
+
 dask-gateway:
+  # Enabling this means to install the dask-gateway Helm chart as a dependency.
   enabled: true
 
   # dask-gateway configuration goes here
