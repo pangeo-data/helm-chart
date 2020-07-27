@@ -13,6 +13,7 @@ dependencies:
     # Make sure to update the dask-gateway CRDs in .circleci/config.yml
     version: "0.8.0"
     repository: 'https://dask.org/dask-gateway-helm-repo/'
+    condition: dask-gateway.enabled
 maintainers:
   - name: Jacob Tomlinson (Met Office)
     email: jacob.tomlinson@informaticslab.co.uk
