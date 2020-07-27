@@ -58,7 +58,7 @@ dask-kubernetes:
   # Role which is part of this Helm chart. To fully disable the use of these,
   # you should not only set this enabled flag to false but also set
   # jupyterhub.singleuser.serviceAccountName to null.
-  enabled: true
+  enabled: false
 
 dask-gateway:
   # Enabling this means to install the dask-gateway Helm chart as a dependency.
