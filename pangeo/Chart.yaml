@@ -1,7 +1,8 @@
 apiVersion: v2
 name: pangeo
 version: 0.0.1-set.by.chartpress
-description: An extention of jupyterhub with extra Pangeo resources
+description: This chart is deprecated. Use `dask/daskhub` instead. https://helm.dask.org/.
+deprecated: true
 dependencies:
   - name: jupyterhub
     version: "0.9.0"
