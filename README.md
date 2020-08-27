@@ -1,6 +1,16 @@
 # Pangeo Helm Chart
 [![Build Status](https://travis-ci.org/pangeo-data/helm-chart.svg?branch=master)](https://travis-ci.org/pangeo-data/helm-chart) [![CircleCI](https://circleci.com/gh/pangeo-data/helm-chart/tree/master.svg?style=svg)](https://circleci.com/gh/pangeo-data/helm-chart/tree/master)
 
+⚠️  This chart is deprecated. Use `dask/daskhub` from https://helm.dask.org/ instead. ⚠️
+
+If you're migrating from the old helm chart, the primary change will be renaming your
+keys from ``pangeo`` to ``daskhub``. If you were manually setting up the `dask-gateway`
+JupyterHub service and setting the Dask-Gateway singleuser variables, you can remove
+those (though keeping them shouldn't hurt).
+
+See https://github.com/pangeo-data/pangeo-cloud-federation/pull/697 for an
+example moving a hubploy-based deployment from the pangeo helm chart to `dask/daskhub`.
+
 This is the helm chart for installing Pangeo.
 
 This chart is mainly going to be a wrapper to subcharts along with custom resources to tie them together.
